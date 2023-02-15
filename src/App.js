@@ -3,15 +3,34 @@ import { useState, useEffect } from 'react';
 import './App.css';
 import Header from "./components/Header"
 
+const customStyles = {
+  content: {
+    top: '40%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    transform: 'translate(-50%, -50%)',
+    maxWidth: `600px`,
+    backgroundColor: `rgb(15, 201, 230)`,
+    borderRadius: `20px`
+  },
+};
+
+Modal.setAppElement(`#root`);
+
 const App = () => {
+  let subtitle;
   const [catData, setCatData] = useState([]);
-  const [errorMsg, setErrorMsg] = useState(null);
+  const [error, setError] = useState(null);
+  const [openCatInfo, setOpenCatInfo] = useState(false);
+  const [selectedCatInfo, setSelectedCatInfo] = useState();
 
   useEffect(() => {
     const fetchData = async () => {
 
       try {
-        setErrorMsg(null);
+        setError(null);
         const response = await fetch("https://api.thecatapi.com/v1/images/search?limit=10");
 
         if (!response.ok) {
@@ -19,15 +38,29 @@ const App = () => {
         }
 
         const data = await response.json();
-        setCatData(data.splice(0,9));
+        setCatData(data.splice(0, 9));
         console.log(data)
 
       } catch (error) {
-        setErrorMsg("We're not Puurrrrfect-Something went wrong...");
+        setError("We're not Puurrrrfect-Something went wrong...");
       }
     }
     fetchData();
   }, [])
+
+
+  const openModal = () => {
+    setOpenCatInfo(true);
+  }
+
+  const afterOpenModal = () => {
+    subtitle.style.color = '#f00';
+  }
+
+  const closeModal = () => {
+    setOpenCatInfo(false);
+  }
+
 
   return (
     <div className="App">
@@ -37,12 +70,47 @@ const App = () => {
         <div id="catGrid">
           {catData.map((cat, index) => {
             return (
-              <div key={index}>
-                <img id="catImages" src={cat.url} alt="catImage"/>
-              </div>
+              <button key={index}
+                onClick={() => {
+                  setSelectedCatInfo(cat)
+                  openModal()
+                  console.log("click")
+                }}>
+                <img id="catImages" src={cat.url} alt="catImage" />
+              </button>
             )
           })}
         </div>
+      </div>
+      <div>
+        {selectedCatInfo &&
+          <Modal
+            isOpen={openCatInfo}
+            onAfterOpen={afterOpenModal}
+            onRequestClose={closeModal}
+            style={customStyles}
+            contentLabel="Example Modal"
+          >
+            <div id="modalXFlexBox">
+              <button id="closeModalBtn" onClick={closeModal}>&times;</button>
+            </div>
+
+            <div id="ModalTextInfo">
+              <h2>I am Modal</h2>
+              {/* <h2> {selectedCatInfo["Species Name"]}</h2>
+              <h5> {selectedCatInfo["Scientific Name"]}</h5>
+              <p dangerouslySetInnerHTML={{ __html: selectedCatInfo["Location"] }} />
+              <p dangerouslySetInnerHTML={{ __html: selectedCatInfo["Population"] }} />
+              <p dangerouslySetInnerHTML={{ __html: selectedCatInfo["Color"] }} /> */}
+            </div>
+
+            {/* <img id="ModalImg"
+              src={selectedCatInfo["Species Illustration Photo"].src}
+              alt={selectedCatInfo["Species Illustration Photo"].alt}
+              title={selectedCatInfo["Species Illustration Photo"].title}
+            /> */}
+          </Modal>
+        }
       </div>
     </div>
   );
