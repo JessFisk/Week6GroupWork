@@ -32,7 +32,6 @@ const App = () => {
   return (
     <div className="App">
       <Header />
-
       {errorMsg !== null && <h3>{errorMsg}</h3>}
       <div id="catBox">
         <div id="catGrid">
