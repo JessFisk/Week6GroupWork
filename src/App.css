@@ -1,4 +1,4 @@
-body{
+body {
   background-color: rgb(234, 234, 234);
 }
 
@@ -7,14 +7,14 @@ a {
   color: inherit !important;
 }
 
-#catBox{
+#catBox {
   display: flex;
   justify-content: center;
   border-color: 5px black;
-  
+
 }
 
-#catGrid{    
+#catGrid {
   max-width: 900px;
   width: 100%;
   padding: 20px;
@@ -23,15 +23,23 @@ a {
   margin-top: 50px;
   margin-left: 5px;
   margin-right: 5px;
+  margin-bottom: 20px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 5px;
-  border-radius: 5px;
+  gap: 30px;
+  border-radius: 10px;
   background-color: rgb(201, 200, 205)
-  }
+}
 
-#catImages{
-  max-width: 250px;
+.catButtons {
+  border: none;
+  margin: none;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+#catImages {
+  max-width: 200px;
 }
 
 #modalXFlexBox {
@@ -39,7 +47,7 @@ a {
   justify-content: right;
 }
 
-#closeModalBtn{
+#closeModalBtn {
   border: none;
   background: none;
   font-size: 18px;
