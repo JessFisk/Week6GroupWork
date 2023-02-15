@@ -2,6 +2,10 @@ body{
   background-color: rgb(234, 234, 234);
 }
 
+a {
+  text-decoration: none !important;
+  color: inherit !important;
+}
 
 #catBox{
   display: flex;
