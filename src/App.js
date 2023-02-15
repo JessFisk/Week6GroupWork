@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-// import Modal from 'react-modal';
+import Modal from 'react-modal';
 import './App.css';
 import Header from "./components/Header"
 
@@ -65,7 +65,7 @@ const App = () => {
   return (
     <div className="App">
       <Header />
-      {errorMsg !== null && <h3>{errorMsg}</h3>}
+      {error!== null && <h3>{error}</h3>}
       <div id="catBox">
         <div id="catGrid">
           {catData.map((cat, index) => {
