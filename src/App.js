@@ -9,21 +9,19 @@ import Checkout from "./Pages/Checkout";
 
 
 const App = () => {
- 
+
 
 
   return (
     <BrowserRouter>
-    
-    <Header> </Header>
-    <Routes>
-      <Route path="/" element={ <Home /> }></Route>
-      <Route path="/Checkout" element={ <Checkout /> }></Route>
-    </Routes>
-    
-    
-    
-    
+
+      <Header> </Header>
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/Checkout" element={<Checkout />}></Route>
+      </Routes>
+
+
     </BrowserRouter>
 
 
