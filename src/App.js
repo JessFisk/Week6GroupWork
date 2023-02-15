@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import Modal from 'react-modal';
+// import Modal from 'react-modal';
 import './App.css';
 
 const App = () => {
@@ -30,7 +30,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1>Cat Shop</h1>
+      <Header />
 
       {errorMsg !== null && <h3>{errorMsg}</h3>}
       <div id="catBox">
