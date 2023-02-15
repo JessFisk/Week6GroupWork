@@ -1,23 +1,49 @@
-import logo from './logo.svg';
+import { useState, useEffect } from 'react';
+import Modal from 'react-modal';
 import './App.css';
 
-function App() {
+const App = () => {
+  const [catData, setCatData] = useState([]);
+  const [errorMsg, setErrorMsg] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+
+      try {
+        setErrorMsg(null);
+        const response = await fetch("https://api.thecatapi.com/v1/images/search?limit=10");
+
+        if (!response.ok) {
+          throw new Error(response.status);
+        }
+
+        const data = await response.json();
+        setCatData(data.splice(0,9));
+        console.log(data)
+
+      } catch (error) {
+        setErrorMsg("We're not Puurrrrfect-Something went wrong...");
+      }
+    }
+    fetchData();
+  }, [])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Cat Shop</h1>
+
+      {errorMsg !== null && <h3>{errorMsg}</h3>}
+      <div id="catBox">
+        <div id="catGrid">
+          {catData.map((cat, index) => {
+            return (
+              <div key={index}>
+                <img id="catImages" src={cat.url} alt="catImage"/>
+              </div>
+            )
+          })}
+        </div>
+      </div>
     </div>
   );
 }
