@@ -12,7 +12,7 @@ const customStyles = {
     marginRight: '-50%',
     transform: 'translate(-50%, -50%)',
     maxWidth: `600px`,
-    backgroundColor: `rgb(15, 201, 230)`,
+    backgroundColor: `rgb(201, 200, 205)`,
     borderRadius: `20px`
   },
 };
@@ -96,7 +96,7 @@ const App = () => {
             </div>
 
             <div id="ModalTextInfo">
-              <h2>I am Modal</h2>
+              <h2>Am I your Puuurfect Pet?</h2>
               {/* <h2> {selectedCatInfo["Species Name"]}</h2>
               <h5> {selectedCatInfo["Scientific Name"]}</h5>
               <p dangerouslySetInnerHTML={{ __html: selectedCatInfo["Location"] }} />
