@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
-import Modal from 'react-modal';
+// import Modal from 'react-modal';
 import './App.css';
+import Header from "./components/Header"
 
 const App = () => {
   const [catData, setCatData] = useState([]);
@@ -30,8 +31,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1>Cat Shop</h1>
-
+      <Header />
       {errorMsg !== null && <h3>{errorMsg}</h3>}
       <div id="catBox">
         <div id="catGrid">
