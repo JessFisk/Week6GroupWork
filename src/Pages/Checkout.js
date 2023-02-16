@@ -1,4 +1,8 @@
-import { Link } from "react-router-dom";
+import { useState, useEffect } from 'react';
+import Modal from 'react-modal';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import '../App.css';
+
 
 
 const Checkout = () => {
@@ -6,18 +10,25 @@ const Checkout = () => {
     // const { checkout } = useParams();
 
     return (
-        <div className="checkout">
+       
+        <div id='checkoutBox'> <div id="checkoutGrid">
 
-            <div><h3>Shopping Basket</h3></div>
+            <div className='Titles'><h1 id="shoppingtitle">Shopping Basket:</h1>
+            <h2 id='paybelow'>Pay below:</h2>
+            <h2 id='delivery'>Delivery address:</h2>
+            </div>
 
-            <h2>Delivery address</h2>
+            <div id='BuybuttonBox'> <div id='texts'> <button className='BuyButton'>Buy now</button> <p id='ordersummary'>Order total</p></div> </div>
+            
 
-            <h2>Pay below!</h2>
+            
 
 
-            <button>Buy now</button>
+           
 
+          </div>
         </div>
+        
     )
 }
 
