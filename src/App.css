@@ -53,3 +53,167 @@ a {
   font-size: 18px;
   cursor: pointer;
 }
+
+
+
+
+
+
+
+
+
+
+
+/* Checkout page CSS */
+
+
+
+
+
+
+#checkoutBox {
+  display: flex;
+  justify-content: center;
+  border-color: 5px black;
+
+}
+
+
+#checkoutGrid {
+  max-width: 900px;
+  width: 100%;
+  height: 1400px;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 20px;
+  /* display: grid; */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 80px;
+  border-radius: 10px;
+  background-color: rgb(201, 200, 205)
+}
+
+.Titles {
+  display: flex;
+  flex-direction: column;
+  
+
+  margin: 5%;
+  margin-top: 50px;
+}
+
+
+#shoppingtitle {
+  display: flex;
+  justify-content: center;
+
+  
+}
+
+
+#items {
+
+display: flex;
+background-color: aqua;
+
+background-color: white;
+display: flex;
+
+width: 250px;
+height: 200px;
+border-radius: 10px;
+margin-left: 60px;
+margin-top: 80px;
+
+}
+
+
+
+#paybelow {
+  margin-top: 130px;
+  display: flex;
+  justify-content: center;
+}
+
+
+.payimages {
+
+display: flex;
+justify-content: center;
+
+
+}
+
+#delivery {
+  margin-top: 190px;
+}
+
+
+.deliveryDetails {
+
+  height: 50px;
+  width: 600px;
+
+
+
+
+}
+
+
+#BuybuttonBox {
+
+background-color: white;
+display: flex;
+
+width: 250px;
+height: 300px;
+border-radius: 10px;
+margin-left: 280px;
+margin-bottom: 880px;
+}
+
+
+#texts {
+  display: flex;
+  flex-direction: column;
+
+}
+
+
+
+.BuyButton {
+  background-color: green;
+  border-radius: 20px;
+  width: 40%;
+  display: flex;
+  max-width: 150px;
+  width: 100%;
+  padding: 2px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  margin-left: 50px;
+  margin-right: 0px;
+  margin-bottom: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  border-radius: 10px;
+}
+
+
+#ordersummary {
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  margin-left: 60px;
+  margin-right: 0px;
+  margin-bottom: 20px;
+
+}
+
+
+
