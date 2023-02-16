@@ -11,7 +11,6 @@ a {
   display: flex;
   justify-content: center;
   border-color: 5px black;
-
 }
 
 #catGrid {
@@ -31,10 +30,15 @@ a {
 
 .catButtonBoxes{
   display: flex;
-  max-width: 200px;
-  max-height: 200px;
+  max-width: 250px;
+  min-width: 180px;
+  max-height: 250px;
+  min-height: 180px;
   justify-content: center;
   align-items: center;
+  border-radius: 10px;
+  background-color:white
+
 }
 
 .catButtons {
@@ -42,10 +46,14 @@ a {
   margin: none;
   border-radius: 10px;
   padding: 10px;
+  background-color:white
 }
 
 #catImages {
   max-width: 100px;
+}
+.nameOnButton{
+  margin-bottom: 0px;
 }
 
 #modalXFlexBox {
@@ -60,30 +68,49 @@ a {
   cursor: pointer;
 }
 
+#addToCartBtn{
+  border: none;
+  margin: none;
+  border-radius: 10px;
+  padding: 10px;
+  background-color:#212529;
+  font-weight: 500;
+  color:white;
+}
 
+.checkoutCatBoxes{
+  border: 2px solid black;
+  border-radius: 5px;
+  margin-top: 50px;
+  padding: 2px;
+}
 
+.basketItemNames{
+  background-color: rgb(239, 238, 238);
+}
 
+.basketItemPrice{
+  background-color: rgb(181, 179, 179);
+  text-align: end;
+}
 
-
-
-
-
+.basketRemoveButton{
+    border: none;
+    background: black;
+    font-size: 14px;
+    cursor: pointer;
+    color: white;
+    border-radius: 70px;
+}
 
 
 /* Checkout page CSS */
-
-
-
-
-
 
 #checkoutBox {
   display: flex;
   justify-content: center;
   border-color: 5px black;
-
 }
-
 
 #checkoutGrid {
   max-width: 900px;
@@ -106,35 +133,25 @@ a {
 .Titles {
   display: flex;
   flex-direction: column;
-  
-
-  margin: 5%;
+    margin: 5%;
   margin-top: 50px;
 }
-
 
 #shoppingtitle {
   display: flex;
   justify-content: center;
-
-  
 }
 
-
 #items {
-
 display: flex;
 background-color: aqua;
-
 background-color: white;
 display: flex;
-
 width: 250px;
 height: 200px;
 border-radius: 10px;
 margin-left: 60px;
 margin-top: 80px;
-
 }
 
 
@@ -147,11 +164,8 @@ margin-top: 80px;
 
 
 .payimages {
-
 display: flex;
 justify-content: center;
-
-
 }
 
 #delivery {
@@ -160,21 +174,13 @@ justify-content: center;
 
 
 .deliveryDetails {
-
   height: 50px;
   width: 600px;
-
-
-
-
 }
 
-
 #BuybuttonBox {
-
 background-color: white;
 display: flex;
-
 width: 250px;
 height: 300px;
 border-radius: 10px;
@@ -182,14 +188,10 @@ margin-left: 280px;
 margin-bottom: 880px;
 }
 
-
 #texts {
   display: flex;
   flex-direction: column;
-
 }
-
-
 
 .BuyButton {
   background-color: green;
@@ -210,7 +212,6 @@ margin-bottom: 880px;
   border-radius: 10px;
 }
 
-
 #ordersummary {
   justify-content: center;
   align-items: center;
@@ -218,7 +219,6 @@ margin-bottom: 880px;
   margin-left: 60px;
   margin-right: 0px;
   margin-bottom: 20px;
-
 }
 
 
