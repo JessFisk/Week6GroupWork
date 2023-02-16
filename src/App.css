@@ -18,17 +18,23 @@ a {
   max-width: 900px;
   width: 100%;
   padding: 20px;
-  justify-content: center;
-  align-items: center;
-  margin-top: 50px;
-  margin-left: 5px;
-  margin-right: 5px;
-  margin-bottom: 20px;
   display: grid;
+  margin-top: 50px;
+  margin-left: 80px;
+  margin-right: 80px;
+  margin-bottom: 20px;
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  gap: 40px;
   border-radius: 10px;
   background-color: rgb(201, 200, 205)
+}
+
+.catButtonBoxes{
+  display: flex;
+  max-width: 200px;
+  max-height: 200px;
+  justify-content: center;
+  align-items: center;
 }
 
 .catButtons {
@@ -39,7 +45,7 @@ a {
 }
 
 #catImages {
-  max-width: 200px;
+  max-width: 100px;
 }
 
 #modalXFlexBox {
