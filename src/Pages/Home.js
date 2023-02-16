@@ -118,6 +118,7 @@ const Home = () => {
               <p>{selectedCatInfo.gender}</p>
               <p>{selectedCatInfo.cattype}</p>
               <p>{selectedCatInfo.price}</p>
+              <button>Add to Cart</button>
             </div>
           </Modal>
         }
