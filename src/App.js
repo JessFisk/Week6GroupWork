@@ -11,8 +11,8 @@ const App = () => {
   
   return (
     <BrowserRouter>
-        {JSON.stringify(basket)}
-      <Header> </Header>
+        {/* {JSON.stringify(basket)} */}
+      <Header basket={basket} updateBasket={setBasket}> </Header>
       <Routes>
         <Route path="/" element={<Home basket={basket} updateBasket={setBasket} />}></Route>
         <Route path="/Checkout" element={<Checkout basket={basket} />}></Route>

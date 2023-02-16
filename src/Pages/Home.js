@@ -3,6 +3,9 @@ import Modal from 'react-modal';
 import '../App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { faker } from '@faker-js/faker';
+import Button from 'react-bootstrap/Button';
+import Offcanvas from 'react-bootstrap/Offcanvas';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const customStyles = {
   content: {
@@ -22,13 +25,15 @@ Modal.setAppElement(`#root`);
 
 const Home = (props) => {
 
-  let subtitle;
+  
   const [catData, setCatData] = useState([]);
   const [error, setError] = useState(null);
   const [openCatInfo, setOpenCatInfo] = useState(false);
   const [selectedCatInfo, setSelectedCatInfo] = useState();
   const [catInfo, setCatInfo] = useState([]);
- 
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
 
   useEffect(() => {
@@ -72,7 +77,6 @@ const Home = (props) => {
   }
 
   const afterOpenModal = () => {
-    subtitle.style.color = '#f00';
   }
 
   const closeModal = () => {
@@ -83,19 +87,22 @@ const Home = (props) => {
     <div className="App">
       {/* {props.basket} */}
       {error !== null && <h3>{error}</h3>}
+      <Button variant="primary" onClick={handleShow}>
+        Launch
+      </Button>
       <div id="catBox">
         <div id="catGrid">
           {catData.map((cat, index) => {
             return (
-              <div className="catButtonBoxes">
-                <button className="catButtons" key={index}
+              <div key={index} className="catButtonBoxes">
+                <button className="catButtons" 
                   onClick={() => {
                     setSelectedCatInfo(catInfo [index])
                     openModal()
                     console.log("click")
                   }}>
                   <img id="catImages" src={cat.url} alt="catImage" />
-                  <p>{catInfo[index].name}</p>
+                  <p className="nameOnButton">{catInfo[index].name}</p>
                 </button>
               </div>
             )
@@ -121,17 +128,45 @@ const Home = (props) => {
               <p>{selectedCatInfo.gender}</p>
               <p>{selectedCatInfo.cattype}</p>
               <p>{selectedCatInfo.price}</p>
-              <button onClick={() => {
+              <button id="addToCartBtn"onClick={() => {
                 props.updateBasket([...props.basket,selectedCatInfo])
                       console.log("Click")
-                  }}>Add to Cart</button>
+                  }}>Add to Basket</button>
             </div>
           </Modal>
         }
       </div>
-    </div>
-  )
+      <Offcanvas show={show} onHide={handleClose} placement={`end`}>
+        <Offcanvas.Header closeButton>
+          <Offcanvas.Title>Basket</Offcanvas.Title>
+        </Offcanvas.Header>
+        <Offcanvas.Body>
+          {props.basket.map((cat, index)=>{
+            return(
+              <div key={index} className="checkoutCatBoxes">
 
+                <div className="basketItemNames">
+                <p>{cat.name}</p>
+                </div>
+
+                <div className="basketItemPrice">
+                <p>{cat.price}</p>
+                </div>
+
+                <button className="basketRemoveButton">
+                &times;
+                </button>
+
+              </div>
+            )
+          })}
+          
+          <a href= "/Checkout">Go to Checkout</a>
+        </Offcanvas.Body>
+      </Offcanvas>
+    </div>
+    
+  )
 
 }
 export default Home;
