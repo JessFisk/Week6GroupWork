@@ -20,7 +20,7 @@ const customStyles = {
 
 Modal.setAppElement(`#root`);
 
-const Home = () => {
+const Home = (props) => {
 
   let subtitle;
   const [catData, setCatData] = useState([]);
@@ -28,6 +28,8 @@ const Home = () => {
   const [openCatInfo, setOpenCatInfo] = useState(false);
   const [selectedCatInfo, setSelectedCatInfo] = useState();
   const [catInfo, setCatInfo] = useState([]);
+ 
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -79,6 +81,7 @@ const Home = () => {
 
   return (
     <div className="App">
+      {/* {props.basket} */}
       {error !== null && <h3>{error}</h3>}
       <div id="catBox">
         <div id="catGrid">
@@ -118,7 +121,10 @@ const Home = () => {
               <p>{selectedCatInfo.gender}</p>
               <p>{selectedCatInfo.cattype}</p>
               <p>{selectedCatInfo.price}</p>
-              <button>Add to Cart</button>
+              <button onClick={() => {
+                props.updateBasket([...props.basket,selectedCatInfo])
+                      console.log("Click")
+                  }}>Add to Cart</button>
             </div>
           </Modal>
         }

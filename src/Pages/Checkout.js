@@ -5,7 +5,7 @@ import '../App.css';
 
 
 
-const Checkout = () => {
+const Checkout = (props) => {
 
     // const { checkout } = useParams();
 
