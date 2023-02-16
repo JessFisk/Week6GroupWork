@@ -90,7 +90,7 @@ a {
   margin-left: 5px;
   margin-right: 5px;
   margin-bottom: 20px;
-  display: grid;
+  /* display: grid; */
   grid-template-columns: repeat(3, 1fr);
   gap: 80px;
   border-radius: 10px;
@@ -108,25 +108,60 @@ a {
 
 
 #shoppingtitle {
+  display: flex;
+  justify-content: center;
 
   
 }
 
 
+#items {
 
+display: flex;
+background-color: aqua;
 
-#paybelow {
-  margin-top: 490px;
+background-color: white;
+display: flex;
+
+width: 250px;
+height: 200px;
+border-radius: 10px;
+margin-left: 60px;
+margin-top: 80px;
+
 }
 
 
 
+#paybelow {
+  margin-top: 130px;
+  display: flex;
+  justify-content: center;
+}
+
+
+.payimages {
+
+display: flex;
+justify-content: center;
+
+
+}
 
 #delivery {
   margin-top: 190px;
 }
 
 
+.deliveryDetails {
+
+  height: 50px;
+  width: 600px;
+
+
+
+
+}
 
 
 #BuybuttonBox {
