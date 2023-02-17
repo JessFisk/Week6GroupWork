@@ -17,8 +17,9 @@ const customStyles = {
     marginRight: '-50%',
     transform: 'translate(-50%, -50%)',
     maxWidth: `600px`,
-    backgroundColor: `rgb(201, 200, 205)`,
-    borderRadius: `20px`
+    backgroundColor: `rgb(8, 8, 79)`,
+    borderRadius: `20px`,
+    color: `white`
   },
 };
 
@@ -111,7 +112,7 @@ const Home = (props) => {
           })}
         </div>
       </div>
-      <div>
+      <div >
         {selectedCatInfo &&
           <Modal
             isOpen={openCatInfo}
@@ -126,10 +127,10 @@ const Home = (props) => {
             <div id="ModalTextInfo">
               <h2>Am I your Puuurfect Pet?</h2>
               <p>{selectedCatInfo.name}</p>
-              <p>{selectedCatInfo.birthdate.toString()}</p>
+              <p>{selectedCatInfo.birthdate.toDateString()}</p>
               <p>{selectedCatInfo.gender}</p>
               <p>{selectedCatInfo.cattype}</p>
-              <p>{selectedCatInfo.price}</p>
+              <p>£{selectedCatInfo.price}</p>
               <button id="addToCartBtn" onClick={() => {
                 props.updateBasket([...props.basket, selectedCatInfo])
                 handleShow()
@@ -158,7 +159,7 @@ const Home = (props) => {
                 </div>
 
                 <div className="basketItemPrice">
-                  <p>{cat.price}</p>
+                  <p>£{cat.price}</p>
                 </div>
 
                 <button className="basketRemoveButton">
@@ -169,7 +170,7 @@ const Home = (props) => {
             )
           })}
 
-          <Link to={"/Checkout"}>Go to check out</Link>
+          <Link className="goToCheckoutButtons" to={"/Checkout"}>Go to check out</Link>
         </Offcanvas.Body>
       </Offcanvas>
     </div>

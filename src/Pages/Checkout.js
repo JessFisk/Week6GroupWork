@@ -40,7 +40,7 @@ const Checkout = (props) => {
                                     <p>{cat.name}</p>
                                 </div>
                                 <div className="basketItemPrice">
-                                    <p>{cat.price}</p>
+                                    <p>£{cat.price}</p>
                                 </div>
                                 <button className="basketRemoveButton">
                                     &times;

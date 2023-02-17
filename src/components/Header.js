@@ -9,11 +9,11 @@ import { FaShoppingCart } from "react-icons/fa"
 import { Link } from "react-router-dom";
 
 const Header = (props) => {
-    return <Navbar bg="dark" variant="dark" style={{ height: 80 }}>
-        <Container>
+    return <Navbar id="navbarBackground" variant="dark" style={{ height: 80 }}>
+        <Container >
             <Navbar.Brand>
                 <img className="logo" src=".\images\catlogo.png" alt="logo"/>
-                <a href="/">Puuurfect Pets</a>
+                <Link id="pageheader" to="/">Puuurfect Pets</Link>
             </Navbar.Brand>
             <Nav>
                 <Dropdown>
@@ -42,7 +42,7 @@ const Header = (props) => {
               
                             </div>
                             </Dropdown.Item>)})}
-                            <Link to={"/Checkout"}>Go to check out</Link>
+                            <Link className="goToCheckoutButtons" to={"/Checkout"}>Go to check out</Link>
                     </Dropdown.Menu>
                 </Dropdown>
             </Nav>
