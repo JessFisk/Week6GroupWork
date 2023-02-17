@@ -70,7 +70,7 @@ const Checkout = (props) => {
                     <button className='BuyButton' type="button" disabled={props.basket.length===0}>Buy now</button>
                     <div className="filters summary">
             <span className="title">Subtotal ({props.basket.length}) items</span>
-            <span style={{ fontWeight: 700, fontSize: 20}}>Total: £ {total}</span>
+            <p style={{ fontWeight: 700, fontSize: 20}}>Total: £ {total}</p>
             </div>
                 </div>
             </div>
