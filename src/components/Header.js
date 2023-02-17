@@ -11,6 +11,7 @@ const Header = (props) => {
     return <Navbar bg="dark" variant="dark" style={{ height: 80 }}>
         <Container>
             <Navbar.Brand>
+                <img className="logo" src=".\images\catlogo.png" alt="logo"/>
                 <a href="/">Puuurfect Pets</a>
             </Navbar.Brand>
             <Nav>

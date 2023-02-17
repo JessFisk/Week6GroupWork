@@ -19,7 +19,10 @@ const Checkout = (props) => {
         <div id='checkoutBox'> <div id="checkoutGrid">
             
 
-            <div className='Titles'><h1 id="shoppingtitle">Shopping Basket</h1> <div id='items'><p> Your items</p></div>
+            <div className='Titles'><h1 id="shoppingtitle">Shopping Basket</h1> <div id='items'><p> Your items</p>
+            </div>
+
+            
             
             
                 <h2 id='paybelow'>Pay below</h2>
