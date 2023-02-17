@@ -239,12 +239,14 @@ margin-top: 0px;
 
 #delivery {
   margin-top: 30px;
+  text-align: center;
 }
 
 
 .deliveryDetails {
   height: 30px;
-  width: 100%;
+  width: 60%;
+  margin: 0 20%
 }
 
 #BuybuttonBox {

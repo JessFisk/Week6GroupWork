@@ -58,7 +58,7 @@ const Checkout = (props) => {
                     <img id="payImages" src="/images/VISA-symbol.jpg" alt="visaImage" /></div>
 
                 <div>
-                    <h2 id='delivery'>Delivery address</h2>
+                    <h2 id='delivery'>Delivery Address:</h2>
                 </div>
 
                 <input className='deliveryDetails' placeholder='Fill in details..'>
