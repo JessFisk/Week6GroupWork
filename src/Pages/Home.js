@@ -25,7 +25,7 @@ Modal.setAppElement(`#root`);
 
 const Home = (props) => {
 
-  
+
   const [catData, setCatData] = useState([]);
   const [error, setError] = useState(null);
   const [openCatInfo, setOpenCatInfo] = useState(false);
@@ -42,7 +42,7 @@ const Home = (props) => {
       try {
         setError(null);
         const response = await fetch("https://api.thecatapi.com/v1/images/search?limit=10&size=small");
-        
+
         if (!response.ok) {
           throw new Error(response.status);
         }
@@ -87,17 +87,18 @@ const Home = (props) => {
     <div className="App">
       {/* {props.basket} */}
       {error !== null && <h3>{error}</h3>}
-      <Button variant="primary" onClick={handleShow}>
+      {/* <Button variant="primary" onClick={handleShow}>
         Launch
-      </Button>
+      </Button> */}
+
       <div id="catBox">
         <div id="catGrid">
           {catData.map((cat, index) => {
             return (
               <div key={index} className="catButtonBoxes">
-                <button className="catButtons" 
+                <button className="catButtons"
                   onClick={() => {
-                    setSelectedCatInfo(catInfo [index])
+                    setSelectedCatInfo(catInfo[index])
                     openModal()
                     console.log("click")
                   }}>
@@ -128,44 +129,50 @@ const Home = (props) => {
               <p>{selectedCatInfo.gender}</p>
               <p>{selectedCatInfo.cattype}</p>
               <p>{selectedCatInfo.price}</p>
-              <button id="addToCartBtn"onClick={() => {
-                props.updateBasket([...props.basket,selectedCatInfo])
-                      console.log("Click")
-                  }}>Add to Basket</button>
+              <button id="addToCartBtn" onClick={() => {
+                props.updateBasket([...props.basket, selectedCatInfo])
+                handleShow()
+                setTimeout(() => {
+                  handleClose()
+                }, 4000);
+                console.log("Click")
+              }}>Add to Basket</button>
             </div>
           </Modal>
         }
-      </div>
+
+        {/* ////Sidebar//// */}
+    </div>
       <Offcanvas show={show} onHide={handleClose} placement={`end`}>
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>Basket</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
-          {props.basket.map((cat, index)=>{
-            return(
+          {props.basket.map((cat, index) => {
+            return (
               <div key={index} className="checkoutCatBoxes">
 
                 <div className="basketItemNames">
-                <p>{cat.name}</p>
+                  <p>{cat.name}</p>
                 </div>
 
                 <div className="basketItemPrice">
-                <p>{cat.price}</p>
+                  <p>{cat.price}</p>
                 </div>
 
                 <button className="basketRemoveButton">
-                &times;
+                  &times;
                 </button>
 
               </div>
             )
           })}
-          
-          <a href= "/Checkout">Go to Checkout</a>
+
+          <a id="GoToCheckoutBtn"href="/Checkout">Go to Checkout</a>
         </Offcanvas.Body>
       </Offcanvas>
     </div>
-    
+
   )
 
 }
