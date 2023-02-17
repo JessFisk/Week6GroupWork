@@ -137,13 +137,13 @@ a {
 #checkoutBox {
   display: flex;
   justify-content: center;
-  border-color: 5px black;
+  border-color: 5px rgb(4, 4, 4);
 }
 
 #checkoutGrid {
   max-width: 900px;
   width: 100%;
-  height: 1400px;
+  min-height: 1000px;
   padding: 20px;
   justify-content: center;
   align-items: center;
@@ -170,59 +170,50 @@ a {
   justify-content: center;
 }
 
-#items {
-display: flex;
-background-color: aqua;
-background-color: white;
-display: flex;
-width: 250px;
-height: 200px;
-border-radius: 10px;
+#itemsBox {
+margin-top: 30px;
 margin-left: 60px;
-margin-top: 80px;
+margin-right: 60px;
+background-color: white;
+border-radius: 10px;
 }
 
-
-
 #paybelow {
-  margin-top: 120px;
+  margin-top: 50px;
   display: flex;
   justify-content: center;
 }
-
 
 .payimages {
 display: flex;
 justify-content: center;
 justify-content: space-evenly;
-margin-top: 40px;
-
-
+margin-top: 0px;
 }
 
 #payImages {
 
-  width: 200px;
+  width: 100px;
 }
 
 #delivery {
-  margin-top: 190px;
+  margin-top: 30px;
 }
 
 
 .deliveryDetails {
-  height: 50px;
-  width: 600px;
+  height: 30px;
+  width: 100%;
 }
 
 #BuybuttonBox {
 background-color: white;
 display: flex;
-width: 250px;
+width: 50%;
 height: 300px;
 border-radius: 10px;
-margin-left: 280px;
-margin-bottom: 880px;
+margin-left: 25%;
+/* margin-bottom: 880px; */
 }
 
 #texts {
