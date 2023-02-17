@@ -15,7 +15,7 @@ const App = () => {
       <Header basket={basket} updateBasket={setBasket}> </Header>
       <Routes>
         <Route path="/" element={<Home basket={basket} updateBasket={setBasket} />}></Route>
-        <Route path="/Checkout" element={<Checkout basket={basket} />}></Route>
+        <Route path="/Checkout" element={<Checkout basket={basket} updateBasket={setBasket} />}></Route>
       </Routes>
 
     </BrowserRouter>

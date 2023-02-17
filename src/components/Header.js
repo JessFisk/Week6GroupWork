@@ -6,6 +6,7 @@ import {
     Dropdown,
 } from "react-bootstrap";
 import { FaShoppingCart } from "react-icons/fa"
+import { Link } from "react-router-dom";
 
 const Header = (props) => {
     return <Navbar bg="dark" variant="dark" style={{ height: 80 }}>
@@ -41,7 +42,7 @@ const Header = (props) => {
               
                             </div>
                             </Dropdown.Item>)})}
-                            <a href= "/Checkout">Go to Checkout</a>
+                            <Link to={"/Checkout"}>Go to check out</Link>
                     </Dropdown.Menu>
                 </Dropdown>
             </Nav>

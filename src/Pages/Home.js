@@ -6,6 +6,7 @@ import { faker } from '@faker-js/faker';
 import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Link } from "react-router-dom";
 
 const customStyles = {
   content: {
@@ -168,7 +169,7 @@ const Home = (props) => {
             )
           })}
 
-          <a id="GoToCheckoutBtn"href="/Checkout">Go to Checkout</a>
+          <Link to={"/Checkout"}>Go to check out</Link>
         </Offcanvas.Body>
       </Offcanvas>
     </div>
@@ -177,7 +178,3 @@ const Home = (props) => {
 
 }
 export default Home;
-
-
-
-
