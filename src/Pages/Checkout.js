@@ -68,7 +68,6 @@ const Checkout = (props) => {
             <div id='BuybuttonBox'>
                 <div id='texts'>
                     <button className='BuyButton' type="button" disabled={props.basket.length===0}>Buy now</button>
-                    <p id='ordersummary'>Order total:</p>
                     <div className="filters summary">
             <span className="title">Subtotal ({props.basket.length}) items</span>
             <span style={{ fontWeight: 700, fontSize: 20}}>Total: £ {total}</span>

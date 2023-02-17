@@ -7,9 +7,24 @@ body {
   background-color: rgb(8, 8, 79);
 }
 
+.navb {
+  background-color: rgb(9, 9, 99);
+  display: flex;
+}
+
 .logo {
   width: 90px;
-  margin-right: 100px;
+  margin-left: 280px;
+}
+
+.name {
+  margin-left: 120px;
+}
+
+.navbar-nav {
+
+margin-right: 250px;
+
 }
 
 #pageheader {
