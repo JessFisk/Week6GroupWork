@@ -5,6 +5,7 @@ import '../App.css';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Offcanvas from 'react-bootstrap/Offcanvas';
+import { Button } from 'react-bootstrap';
 
 
 
@@ -13,6 +14,12 @@ import Offcanvas from 'react-bootstrap/Offcanvas';
 const Checkout = (props) => {
 
     // const { checkout } = useParams();
+
+    const [total, setTotal] = useState();
+
+    useEffect(() => {
+        setTotal(props.basket.reduce((acc, curr) => acc + Number(curr.price), 0))
+    }, [props.basket])
 
     return (
 
@@ -60,8 +67,12 @@ const Checkout = (props) => {
 
             <div id='BuybuttonBox'>
                 <div id='texts'>
-                    <button className='BuyButton'>Buy now</button>
+                    <button className='BuyButton' type="button" disabled={props.basket.length===0}>Buy now</button>
                     <p id='ordersummary'>Order total:</p>
+                    <div className="filters summary">
+            <span className="title">Subtotal ({props.basket.length}) items</span>
+            <span style={{ fontWeight: 700, fontSize: 20}}>Total: £ {total}</span>
+            </div>
                 </div>
             </div>
 

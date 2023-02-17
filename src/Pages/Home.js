@@ -135,7 +135,7 @@ const Home = (props) => {
                 handleShow()
                 setTimeout(() => {
                   handleClose()
-                }, 4000);
+                }, 2500);
                 console.log("Click")
               }}>Add to Basket</button>
             </div>
