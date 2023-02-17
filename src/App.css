@@ -81,7 +81,7 @@ a {
 .checkoutCatBoxes{
   border: 2px solid black;
   border-radius: 5px;
-  margin-top: 50px;
+  margin-bottom: 50px;
   padding: 2px;
 }
 
@@ -102,7 +102,16 @@ a {
     color: white;
     border-radius: 70px;
 }
-
+#GoToCheckoutBtn{
+    border: none;
+    padding: 2px;
+    background: rgb(117, 116, 116);
+    font-size: 20px;
+    cursor: pointer;
+    border:10px;
+    border-radius: 5px;
+    font-weight: 500;
+}
 
 /* Checkout page CSS */
 
