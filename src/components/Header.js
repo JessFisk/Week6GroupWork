@@ -13,7 +13,7 @@ const Header = (props) => {
         <Container>
             <Navbar.Brand>
                 <img className="logo" src=".\images\catlogo.png" alt="logo"/>
-                <a href="/">Puuurfect Pets</a>
+                <a className="name" href="/">Puuurfect Pets</a>
             </Navbar.Brand>
             <Nav>
                 <Dropdown>
