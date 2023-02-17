@@ -19,7 +19,7 @@ const Header = (props) => {
                 <Dropdown>
                     <Dropdown.Toggle variant="success">
                         <FaShoppingCart color="white" fontSize="25px" />
-                        <Badge>{10}</Badge>
+                        <Badge bg="none">{props.basket.length}</Badge>
                     </Dropdown.Toggle>
                     <Dropdown.Menu style={{ minWidth: 370 }}>
                     {props.basket.map((cat, index)=>{
