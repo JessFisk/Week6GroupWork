@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Week6GroupWork/static/css/main.b20c9b7f.css",
+    "main.js": "/Week6GroupWork/static/js/main.5d27e49e.js",
+    "index.html": "/Week6GroupWork/index.html",
+    "main.b20c9b7f.css.map": "/Week6GroupWork/static/css/main.b20c9b7f.css.map",
+    "main.5d27e49e.js.map": "/Week6GroupWork/static/js/main.5d27e49e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b20c9b7f.css",
+    "static/js/main.5d27e49e.js"
+  ]
+}
